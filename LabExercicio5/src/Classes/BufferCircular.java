@@ -13,42 +13,28 @@ public class BufferCircular<T> implements IBufferCircular<T>
     {
         buffer = (T[])(new Object[qtdElementos]);
         inicio = 0;
-        fim = 1;
+        fim = -1;
     }
 
     @Override
     public void adicionar(T info)
     {
-        if(inicio == 0)
-        {
-            buffer[0] = info;
-            inicio++;
-            fim++;
-        }
-        else if(fim > buffer.length)
-        {
-            buffer[0] = info;
-            inicio = 0;
-            fim = 1;
-        }
-        else
-        {
-            buffer[inicio] = info;
-            inicio++;
-            fim++;
-        }
+     
+        if(fim == buffer.length -1)
+            fim = -1;
+        fim++;
+        buffer[fim] = info;            
     }
 
     @Override
     public T remover()
-    {
-        T aux = null;
-        if(fim < buffer.length)
-            buffer[inicio] = null;
-        else
-            aux = buffer[0];
-            buffer[0] = null;
-            return aux;
+    {      
+        T aux = buffer[inicio++];
+
+        if(inicio == buffer.length)
+            inicio = 0;
+        
+        return aux;    
     }
 
     @Override

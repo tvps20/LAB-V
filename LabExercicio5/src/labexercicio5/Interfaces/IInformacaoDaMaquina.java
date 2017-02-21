@@ -18,4 +18,3 @@ public interface IInformacaoDaMaquina
 
     void setClockCPU(int _clockCPU);
 }
-}

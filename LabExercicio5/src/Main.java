@@ -1,6 +1,6 @@
 import Classes.BufferCircular;
 import Classes.InformacaoDaMaquina;
-import labexercicio5.Interfaces.IInformacaoDaMaquina;
+import Interfaces.IInformacaoDaMaquina;
 
 public class Main {
    

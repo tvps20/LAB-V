@@ -1,6 +1,6 @@
 package Classes;
 
-import labexercicio5.Interfaces.IInformacaoDaMaquina;
+import Interfaces.IInformacaoDaMaquina;
 
 public class InformacaoDaMaquina<T> implements IInformacaoDaMaquina 
 {

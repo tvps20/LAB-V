@@ -1,6 +1,6 @@
 package Classes;
 
-import labexercicio5.Interfaces.IBufferCircular;
+import Interfaces.IBufferCircular;
 
 
 public class BufferCircular<T> implements IBufferCircular<T> 

@@ -15,13 +15,25 @@ public class Main {
         //InformacaoDaMaquina novaInformacao4 = new InformacaoDaMaquina();
         //InformacaoDaMaquina novaInformacao5 = new InformacaoDaMaquina();
 
-        novoBuffe.adicionar(novaInformacao1);
+        novaInformacao1.setUsoRAM(150);
+        //System.out.println(novaInformacao1.getUsoRAM());
+        //novoBuffe.adicionar(novaInformacao1);
         //novoBuffe.adicionar(novaInformacao2);
         //novoBuffe.adicionar(novaInformacao3);
         //novoBuffe.adicionar(novaInformacao4);
         //novoBuffe.adicionar(novaInformacao5);
         
-        novoBuffe.remover();
+        //novoBuffe.remover();
+              
+        System.out.println( novoBuffe.estaVazio());
+        System.out.println(novoBuffe.numeroDeElementos());
+        System.out.println(novoBuffe.tamanhoMaximo());
+        
+        for(int i=0; i<5; i++)
+        {
+            InformacaoDaMaquina novaInformacao = new InformacaoDaMaquina();
+            novoBuffe.adicionar(novaInformacao);
+        }
     }
     
 }

@@ -1,12 +1,13 @@
 import Classes.BufferCircular;
 import Classes.InformacaoDaMaquina;
+import Interfaces.IBufferCircular;
 import Interfaces.IInformacaoDaMaquina;
 
 public class Main {
    
     public static void main(String[] args) 
     {
-        BufferCircular<IInformacaoDaMaquina> novoBuffe = new BufferCircular<IInformacaoDaMaquina>(4);
+        IBufferCircular<IInformacaoDaMaquina> novoBuffe = new BufferCircular<IInformacaoDaMaquina>(4);
 
         InformacaoDaMaquina novaInformacao1 = new InformacaoDaMaquina();
         //InformacaoDaMaquina novaInformacao2 = new InformacaoDaMaquina();

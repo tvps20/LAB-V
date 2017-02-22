@@ -8,12 +8,14 @@ public class BufferCircular<T> implements IBufferCircular<T>
     private T[] buffer;
     int inicio;
     int fim;
+    int numElementos;
 
     public BufferCircular(int qtdElementos)
     {
         buffer = (T[])(new Object[qtdElementos]);
         inicio = 0;
         fim = -1;
+        numElementos = 0;
     }
 
     @Override
@@ -23,7 +25,8 @@ public class BufferCircular<T> implements IBufferCircular<T>
         if(fim == buffer.length -1)
             fim = -1;
         fim++;
-        buffer[fim] = info;            
+        buffer[fim] = info; 
+        numElementos++;
     }
 
     @Override
@@ -34,6 +37,7 @@ public class BufferCircular<T> implements IBufferCircular<T>
         if(inicio == buffer.length)
             inicio = 0;
         
+        numElementos--;
         return aux;    
     }
 
@@ -49,17 +53,7 @@ public class BufferCircular<T> implements IBufferCircular<T>
     @Override
     public int numeroDeElementos()
     {
-        int count = 0;
-
-        for(int i=0; i<tamanhoMaximo()-1; i++)
-        {
-            if(buffer[i] != null)
-            {
-                count++;
-            }
-        }
-
-        return count;
+        return numElementos;
     }
 
     @Override

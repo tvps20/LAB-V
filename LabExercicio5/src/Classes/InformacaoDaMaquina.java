@@ -18,7 +18,10 @@ public class InformacaoDaMaquina<T> implements IInformacaoDaMaquina
     @Override
     public void setUsoRAM(int _usoRAM)
     {
-        this.usoRAM = _usoRAM;
+        if(checarEntrada(_usoRAM))
+            this.usoRAM = _usoRAM;
+        else
+            System.out.println("o Uso deve esta entra 0 e 100");
     }
 
     @Override
@@ -29,7 +32,8 @@ public class InformacaoDaMaquina<T> implements IInformacaoDaMaquina
     @Override
     public void setUsoHD(int _usoHD)
     {
-        this.usoHD = _usoHD;
+        if(checarEntrada(_usoHD))
+            this.usoHD = _usoHD;
     }
 
     @Override
@@ -41,7 +45,8 @@ public class InformacaoDaMaquina<T> implements IInformacaoDaMaquina
     @Override
     public void setUsoCPU(int _usoCPU)
     {
-        this.usoCPU = _usoCPU;
+        if(checarEntrada(_usoCPU))
+            this.usoCPU = _usoCPU;
     }
 
     @Override
@@ -53,10 +58,11 @@ public class InformacaoDaMaquina<T> implements IInformacaoDaMaquina
     @Override
     public void setClockCPU(int _clockCPU)
     {
-        this.clockCPU = _clockCPU;
+        if(checarEntrada(_clockCPU))
+            this.clockCPU = _clockCPU;
     }
 
-    public boolean checarEntrada(int _entrada)
+    private boolean checarEntrada(int _entrada)
     {
         if((_entrada >= 0) && (_entrada <= 100))
             return true;
